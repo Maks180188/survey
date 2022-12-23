@@ -5431,7 +5431,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Survey() {
-  console.log('here11123');
+  console.log('here111');
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     className: "container mt-5",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
@@ -5456,8 +5456,8 @@ function Survey() {
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Survey);
 // DOM element
-if (document.getElementById('survey')) {
-  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Survey, {}), document.getElementById('survey'));
+if (document.getElementById('app')) {
+  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Survey, {}), document.getElementById('app'));
 }
 
 /***/ }),

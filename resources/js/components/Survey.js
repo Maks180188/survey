@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 function Survey() {
-    console.log('here11123');
+    console.log('here111');
     return (
         <div className="container mt-5">
             <div className="row justify-content-center">
@@ -17,6 +17,6 @@ function Survey() {
 }
 export default Survey;
 // DOM element
-if (document.getElementById('survey')) {
-    ReactDOM.render(<Survey />, document.getElementById('survey'));
+if (document.getElementById('app')) {
+    ReactDOM.render(<Survey />, document.getElementById('app'));
 }
