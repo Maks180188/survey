@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\SurveyController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +19,8 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::resource('/surveys', SurveyController::class);
+Route::resource('/question', SurveyController::class);
 Route::get('/survey', function () {
     return view('survey');
 });

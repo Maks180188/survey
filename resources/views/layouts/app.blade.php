@@ -21,6 +21,10 @@
     @env('local')
         <script src="http://localhost:35729/livereload.js"></script>
     @endenv
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    />
 </head>
 <body>
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
