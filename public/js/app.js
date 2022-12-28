@@ -23577,7 +23577,7 @@ function Survey() {
     setSurveys = _useState4[1];
   var handleChange = function handleChange(event) {
     setSurvey(event.target.value);
-    fetchQuestion();
+    fetchQuestion(event.target.value);
   };
   var fetchSurveys = function fetchSurveys() {
     axios__WEBPACK_IMPORTED_MODULE_2___default().get('/surveys').then(function (res) {
@@ -23586,9 +23586,9 @@ function Survey() {
       return console.log('error', err);
     });
   };
-  var fetchQuestion = function fetchQuestion() {
-    axios__WEBPACK_IMPORTED_MODULE_2___default().get('/surveys').then(function (res) {
-      setSurveys(res.data);
+  var fetchQuestion = function fetchQuestion(id) {
+    axios__WEBPACK_IMPORTED_MODULE_2___default().get("/question/".concat(id)).then(function (res) {
+      console.log('res', res);
     })["catch"](function (err) {
       return console.log('error', err);
     });

@@ -15,7 +15,7 @@ function Survey() {
 
     const handleChange = (event) => {
         setSurvey(event.target.value);
-        fetchQuestion();
+        fetchQuestion(event.target.value);
     };
 
     const fetchSurveys = () => {
@@ -27,10 +27,10 @@ function Survey() {
             .catch((err) => console.log('error', err));
     };
 
-    const fetchQuestion = () => {
-        axios.get('/surveys')
+    const fetchQuestion = (id) => {
+        axios.get(`/question/${id}`)
             .then((res) => {
-                    setSurveys(res.data);
+                    console.log('res', res);
                 }
             )
             .catch((err) => console.log('error', err));
