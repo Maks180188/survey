@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\SurveyController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -20,12 +22,19 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::resource('/surveys', SurveyController::class);
-Route::get('/question/{survey}', [QuestionController::class, 'getQuestion']);
-Route::get('/survey', function () {
-    return view('survey');
+Route::middleware(['auth:sanctum'])->group(function () {
+    Route::resource('/surveys', SurveyController::class);
+    Route::get('/question/{survey}', [QuestionController::class, 'getQuestion']);
+    Route::get('/survey', function () {
+        return view('survey');
+    });
+    Route::get('/admin', function () {
+        return view('admin.surveys');
+    });
+    Route::middleware('isAdmin:1')->group(function () {
+        Route::get('/get-user', [UserController::class, 'getCurrentUser']);
+    });
 });
-
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');

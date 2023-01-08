@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import ReactDOM from 'react-dom';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -73,7 +72,4 @@ function Survey() {
 }
 
 export default Survey;
-// DOM element
-if (document.getElementById('app')) {
-    ReactDOM.render(<Survey/>, document.getElementById('app'));
-}
+

@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -32,10 +33,12 @@
 <main class="py-4">
     @yield('content')
 </main>
-@if (Auth::user() && !Auth::user()->is_admin)
+@if (Auth::user() && Auth::user()->is_admin)
     <div id="app">
     </div>
 @endif
 
 </body>
 </html>
+
+
